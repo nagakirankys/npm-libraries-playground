@@ -1,6 +1,14 @@
 // Import stylesheets
 import './style.css';
+import * as DOMPurify from 'dompurify';
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+appDiv.innerHTML = 'Typescript Starter';
+
+const testDOMPurify = () => {
+  const clean = DOMPurify.sanitize('<b>hello there</b>');
+  appDiv.innerHTML = clean;
+};
+
+testDOMPurify();
